@@ -1,0 +1,73 @@
+# Go generate the sha-hash run
+# HASH=$(openssl sha256  das2C-${VERSION}.tar.gz | awk '{print $2}')
+#
+# Example:
+#  openssl sha256 das2C-tmp.tar.gz | awk '{print $2}'
+
+{% set cdf_ver = "3.9.1" %}
+{% set cdf_url = "https://spdf.gsfc.nasa.gov/pub/software/cdf/dist/cdf39_1/linux/cdf39_1-dist-cdf.tar.gz" %} # [linux]
+{% set cdf_sha = "d548789117c52fcd4d08be5f432c86ae927e182d3876e800cd4ca98e5f7fa5e7" %} # [linux]
+
+{% set spice_ver = "67" %}
+{% set spice_url = "https://naif.jpl.nasa.gov/pub/naif/toolkit/C/PC_Linux_GCC_64bit/packages/cspice.tar.Z" %} # [linux]
+{% set spice_sha = "60a95b51a6472f1afe7e40d77ebdee43c12bb5b8823676ccc74692ddfede06ce" %} # [linux]
+
+{% set das2c_ver = "3.0.2" %}
+{% set das2c_url = "https://github.com/das-developers/das2C/archive/refs/tags/v3.0-pre3.tar.gz" %}
+{% set das2c_sha = "1562bf612e83bc6a0969bc9662914a058461bc3489ccad46ade0f5b4a35faa79" %}
+
+package:
+   name: das2c
+   version: {{ das2c_ver }}
+
+# Note sources are moved up one folder so that contents are in the folders
+# specified below
+source:
+   - url: {{ cdf_url }}
+     folder: cdf
+     sha256: {{ cdf_sha }}
+
+   - url: {{ spice_url }}
+     folder: spice
+     sha256: {{ spice_sha }}
+
+   - url: {{ das2c_url }}
+     folder: das2c
+     sha256: {{ das2c_sha }}
+   
+   
+build:
+   # This is the first build
+   number: 1
+   
+requirements:
+   build:
+      - {{ compiler('c') }}
+            
+   host:
+      - expat
+      - fftw
+      - zlib
+      - openssl
+#      - pthreads4w [win]
+      
+   run:
+      - expat
+      - fftw
+      - zlib
+      - openssl
+#      - pthreads4w [win]
+      
+test:
+   commands:
+      das2_ascii -h
+      das2_psd -h
+      das3_csv -h
+      das3_cdf -h
+      das3_spice -h
+
+about:
+   home: https://github.com/das-developers/das2C
+   license: LGPL-2.1
+   license_file: das2c/LICENSE
+   summary: das2 stream utilities and catalog client in C
