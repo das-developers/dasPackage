@@ -1,13 +1,18 @@
-diff -ruN pthreads4w-code-07053a521b0a9deb6db2a649cde1f828f2eb1f4f/Makefile pthreads4w-code-new/Makefile
---- pthreads4w-code-07053a521b0a9deb6db2a649cde1f828f2eb1f4f/Makefile	2018-08-08 05:47:40.000000000 -0500
-+++ pthreads4w-code-new/Makefile	2019-04-26 14:14:15.719088066 -0500
-@@ -8,7 +8,8 @@
+--- Makefile	2018-08-08 05:47:40.000000000 -0500
++++ Makefile	2025-02-10 17:58:04.246051862 -0600
+@@ -8,11 +8,11 @@
  PTW32_VER	= 3$(EXTRAVERSION)
  PTW32_VER_DEBUG= $(PTW32_VER)d
  
 -DESTROOT	= ..\PTHREADS-BUILT
-+# DESTROOT	= ..\PTHREADS-BUILT
-+DESTROOT = $(PREFIX)
++DESTROOT	= $(LIBRARY_PREFIX)
  
- DLLDEST	= $(DESTROOT)\bin
- LIBDEST	= $(DESTROOT)\lib
+-DLLDEST	= $(DESTROOT)\bin
+-LIBDEST	= $(DESTROOT)\lib
+-HDRDEST	= $(DESTROOT)\include
++DLLDEST	= $(LIBRARY_BIN)
++LIBDEST	= $(LIBRARY_LIB)
++HDRDEST	= $(LIBRARY_INC)
+ 
+ DLLS					= pthreadVCE$(PTW32_VER).dll pthreadVSE$(PTW32_VER).dll pthreadVC$(PTW32_VER).dll \
+ 						  pthreadVCE$(PTW32_VER_DEBUG).dll pthreadVSE$(PTW32_VER_DEBUG).dll pthreadVC$(PTW32_VER_DEBUG).dll

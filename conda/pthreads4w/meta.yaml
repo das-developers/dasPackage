@@ -7,8 +7,6 @@
 # To use this package
 # conda install -c dasdevelopers pthreads4w
 
-
-
 {% set name = "pthreads4w" %}
 {% set version = "3.0.1" %}
 
@@ -34,13 +32,13 @@ build:
    
 test:
    commands:
-      - if not exist %PREFIX%\include\pthread.h exit 1
-      - if not exist %PREFIX%\bin\pthreadVC3.dll exit 1
-      - if not exist %PREFIX%\lib\pthreadVC3.lib exit 1
-      - if not exist %PREFIX%\bin\pthreadVC3d.dll exit 1
-      - if not exist %PREFIX%\lib\pthreadVC3d.lib exit 1
-      - if not exist %PREFIX%\lib\libpthreadVC3.lib exit 1
-      - if not exist %PREFIX%\lib\libpthreadVC3d.lib exit 1
+      - if not exist %LIBRARY_INC%\pthread.h exit 1
+      - if not exist %LIBRARY_BIN%\pthreadVC3.dll exit 1
+      - if not exist %LIBRARY_LIB%\pthreadVC3.lib exit 1
+      - if not exist %LIBRARY_BIN%\pthreadVC3d.dll exit 1
+      - if not exist %LIBRARY_LIB%\pthreadVC3d.lib exit 1
+      - if not exist %LIBRARY_LIB%\libpthreadVC3.lib exit 1
+      - if not exist %LIBRARY_LIB%\libpthreadVC3d.lib exit 1
 
 about:
    home: https://sourceforge.net/projects/pthreads4w/

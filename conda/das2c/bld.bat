@@ -1,10 +1,11 @@
 set N_ARCH=\
-set LIBRARY_INC=C:\Users\pikerc\git\vcpkg\installed\x64-windows-static\include
-set LIBRARY_LIB=C:\Users\pikerc\git\vcpkg\installed\x64-windows-static\lib
-set CSPICE_INC=C:\opt\cspice\include
-set CSPICE_LIB=C:\opt\cspice\lib\cspice.lib
-set CDF_INC=C:\opt\cdf\include
-set CDF_LIB=C:\opt\cdf\lib\libcdf.lib
+
+set CSPICE_INC=..\spice\include
+set CSPICE_LIB=..\spice\lib\cspice.lib
+set CDF_INC=..\cdf\include
+set CDF_LIB=..\cdf\lib\libcdf.lib
+
+cd das2c
 
 nmake.exe /nologo /f buildfiles\Windows.mak clean
 
