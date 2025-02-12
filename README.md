@@ -4,7 +4,7 @@ This is a utility repository containing packaging recipies for das libraries and
 Most packaging utilities assume that the source code is complete an the starting point is an
 upstream tarball/zip file of sources.
 
-## Anaconda builds
+## Anaconda Packages
 Example command lines.  First activate your version of anaconda or miniconda.
 For example
 ```batchfile
@@ -33,13 +33,14 @@ conda build -c dasdevelopers das2py
 anaconda upload -u dasdevelopers PACKAGE_FILE_FROM_OUTPUT
 ```
 
-## PIP Builds
+## DEB Packages
+At placeholder stage, nothing here yet
+
+## Python Wheel Packages
 Todo
 
-## RPM Builds
-Todo
+## RPM Packages
+Spec file for das2C is in progress
 
-## DEB Builds
-Todo
 
 
