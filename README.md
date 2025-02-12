@@ -1,8 +1,9 @@
 # Das Package
 
-This is a utility repository containing packaging recipies for das libraries and dependencies.
-Most packaging utilities assume that the source code is complete an the starting point is an
-upstream tarball/zip file of sources.
+This is a utility repository containing downstream packaging recipies for das libraries 
+and related dependencies. Language dependend packaging such as [dub](https://code.dlang.org/) 
+for D or [wheels](https://packaging.python.org/en/latest/specifications/binary-distribution-format/) 
+for Python are outside the scope of this repository.
 
 ## Anaconda Packages
 Example command lines.  First activate your version of anaconda or miniconda.
@@ -35,9 +36,6 @@ anaconda upload -u dasdevelopers PACKAGE_FILE_FROM_OUTPUT
 
 ## DEB Packages
 At placeholder stage, nothing here yet
-
-## Python Wheel Packages
-Todo
 
 ## RPM Packages
 Spec file for das2C is in progress
