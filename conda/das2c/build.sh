@@ -15,11 +15,24 @@ N_ARCH=/
 export N_ARCH
 
 if [ "$(uname)" == "Linux" ] ; then
-	echo "$(pwd): make CURSES=no SHARED=no OS=linux ENV=gnu all.build"
+	echo "$(pwd)/cdf: make CURSES=no SHARED=no OS=linux ENV=gnu all.build"
 	cd cdf && make CURSES=no SHARED=no OS=linux ENV=gnu all.build
 	cd ..
+elif [ "$(uname)" == "Darwin" ] ; then
+	# Spice intel libraries are not compatable with some macs due to missing 
+	# symbols. On mac we have to build the software manually
+	echo "$(pwd)/spice: csh -c ./makeall.csh"
+	cd spice && csh -c ./makeall.csh
+	cd ..
+
+	echo "$(pwd)/cdf: make CURSES=no SHARED=no OS=macosx ENV=x86_64 all.build"
+	cd cdf && make CURSES=no SHARED=no OS=macosx ENV=x86_64 all.build
+	cd ..
+
 else
-	echo "Update the build script for non-linux environments"
+	echo "***************** Hi There *****************************"
+	echo "*     Update the build script for this environment     *"
+	echo "********************************************************"
 	exit 3
 fi
 

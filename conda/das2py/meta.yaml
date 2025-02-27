@@ -43,7 +43,7 @@ requirements:
       - expat
       - fftw
       - openssl
-      - pthreads4w ==3.0.1
+      - pthreads4w ==3.0.1 # [ win ]
 
 
    host:
@@ -56,6 +56,7 @@ requirements:
       - python
       - setuptools
       - numpy >=1.10.0
+      - nomkl [ osx and x86_64 ]
       - lxml
       - das2c =={{ das2c_version }}
 

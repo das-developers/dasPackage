@@ -7,22 +7,28 @@
 {% set cdf_ver = "3.9.1" %}
 {% set cdf_url = "https://spdf.gsfc.nasa.gov/pub/software/cdf/dist/latest/windows/cdf3.9.1_64bit_WinZip_Installer.zip" %} # [win]
 {% set cdf_url = "https://spdf.gsfc.nasa.gov/pub/software/cdf/dist/cdf39_1/linux/cdf39_1-dist-cdf.tar.gz" %} # [linux]
+{% set cdf_url = "https://spdf.gsfc.nasa.gov/pub/software/cdf/dist/cdf39_1/macosx/src_distribution/cdf39_1-dist-cdf.tar.gz" %} #[osx]
+
 {% set cdf_sha = "07af1e3d38c0fcfa292417cd3576c196da586cdef3d0ba617884eed0aef6a74c" %} # [win]
 {% set cdf_sha = "d548789117c52fcd4d08be5f432c86ae927e182d3876e800cd4ca98e5f7fa5e7" %} # [linux]
+{% set cdf_sha = "d548789117c52fcd4d08be5f432c86ae927e182d3876e800cd4ca98e5f7fa5e7" %} # [osx]
+
 
 {% set spice_ver = "67" %}
 {% set spice_url = "https://naif.jpl.nasa.gov/pub/naif/toolkit/C/PC_Windows_VisualC_64bit/packages/cspice.zip" %} # [win]
 {% set spice_url = "https://naif.jpl.nasa.gov/pub/naif/toolkit/C/PC_Linux_GCC_64bit/packages/cspice.tar.Z" %} # [linux]
+{% set spice_url = "https://naif.jpl.nasa.gov/pub/naif/toolkit/C/MacIntel_OSX_AppleC_64bit/packages/cspice.tar.Z" %} # [osx]
 {% set spice_sha = "98d60b814b412fa55294aeaaeb7dab46d849cc87a8b709ffe835d08de17625dc" %} # [win]
 {% set spice_sha = "60a95b51a6472f1afe7e40d77ebdee43c12bb5b8823676ccc74692ddfede06ce" %} # [linux]
+{% set spice_sha = "6f4980445fee4d363dbce6f571819f4a248358d2c1bebca47e0743eedfe9935e" %} # [osx]
 
 {% set das2c_ver = "3.0.3" %}
 
-{% set das2c_url = "https://github.com/das-developers/das2C/archive/refs/tags/v3.0-pre5.tar.gz" %}
-{% set das2c_sha = "0c1308c3037118d96f7447b18af35404114ae59c3ab7a7017448131cb2615732" %}
+#{% set das2c_url = "https://github.com/das-developers/das2C/archive/refs/tags/v3.0-pre5.tar.gz" %}
+#{% set das2c_sha = "0c1308c3037118d96f7447b18af35404114ae59c3ab7a7017448131cb2615732" %}
 
-#{% set das2c_url = "https://space.physics.uiowa.edu/~pikerc/das2C-tmp.tar.gz" %}
-#{% set das2c_sha = "faafb36c9d6c5b1d6135285ddb3891e0a31d4565ab42f95e3c8ff14d09fcf948" %}
+{% set das2c_url = "https://space.physics.uiowa.edu/~pikerc/das2C-tmp.tar.gz" %}
+{% set das2c_sha = "d9ad45c57e9c82d8a440ea18c2665c8f7ab801d6a2c8431f65fe643d0bd21789" %}
 
 package:
    name: das2c
