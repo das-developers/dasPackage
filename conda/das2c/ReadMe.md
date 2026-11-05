@@ -56,10 +56,10 @@ need to build [pthreads4w](https://sourceforge.net/projects/pthreads4w/)
 (POSIX Threads for Windows).  To do so:
 
 ```dos
-cd das2C\buildfiles
-conda build conda_pthreads4w
+cd dasPackage\conda
+conda build pthreads4w
 rem Path below is just an example
-anaconda upload -u dasdevelopers \Users\cwp\miniconda39\conda-bld\win-64\pthreads4w-3.0.0-hf4e77e7_0.bz2
+anaconda upload -u dasdevelopers \Users\cwp\miniconda39\conda-bld\win-64\pthreads4w-3.0.1-hf4e77e7_0.bz2
 conda install -c dasdevelopers pthreads4w
 ```
 
@@ -67,15 +67,16 @@ conda install -c dasdevelopers pthreads4w
 
 1. Activate your conda environment
 
-2. Get the sources
+2. Get the recipes.  The das2C, CDF and SPICE sources are fetched by
+   meta.yaml, no das2C checkout is needed.
    ```bash
-   (base) $ git clone https://github.com/das-developers/das2C.git
-   (base) $ cd das2C
+   (base) $ git clone https://github.com/das-developers/dasPackage.git
+   (base) $ cd dasPackage/conda
    ```
 
-3. Run conda build:
+3. Run conda build, the dasdevelopers channel supplies pthreads4w on Windows:
    ```bash
-   (base) $ conda build buildfiles/conda
+   (base) $ conda build -c dasdevelopers das2c
    ```
 
 4. Upload to anaconda.org

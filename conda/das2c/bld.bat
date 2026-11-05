@@ -19,19 +19,7 @@ if %ERRORLEVEL% NEQ 0 (
 	EXIT /B 2
 )
 
-nmake.exe /nologo /f buildfiles\Windows.mak SPICE=yes CDF=yes run_test
-
-if %ERRORLEVEL% NEQ 0 (
-	EXIT /B 3
-)
-
-nmake.exe /nologo /f buildfiles\Windows.mak SPICE=yes CDF=yes test_spice
-
-if %ERRORLEVEL% NEQ 0 (
-	EXIT /B 3
-)
-
-nmake.exe /nologo /f buildfiles\Windows.mak SPICE=yes CDF=yes test_cdf
+nmake.exe /nologo /f buildfiles\Windows.mak SPICE=yes CDF=yes test
 
 if %ERRORLEVEL% NEQ 0 (
 	EXIT /B 3

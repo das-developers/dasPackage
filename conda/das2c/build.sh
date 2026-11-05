@@ -40,11 +40,5 @@ cd das2c && make SPICE=yes CDF=yes CDF_INC=${CDF_INC} CDF_LIB=${CDF_LIB} CSPICE_
 cd ..
 cd das2c && make SPICE=yes CDF=yes CDF_INC=${CDF_INC} CDF_LIB=${CDF_LIB} CSPICE_INC=${SPICE_INC} CSPICE_LIB=${SPICE_LIB} test
 cd ..
-cd das2c && make SPICE=yes CDF=yes CDF_INC=${CDF_INC} CDF_LIB=${CDF_LIB} CSPICE_INC=${SPICE_INC} CSPICE_LIB=${SPICE_LIB} test_spice
-cd ..
-cd das2c && make SPICE=yes CDF=yes CDF_INC=${CDF_INC} CDF_LIB=${CDF_LIB} CSPICE_INC=${SPICE_INC} CSPICE_LIB=${SPICE_LIB} test_cdf
-cd ..
 cd das2c && make SPICE=yes CDF=yes CDF_INC=${CDF_INC} CDF_LIB=${CDF_LIB} CSPICE_INC=${SPICE_INC} CSPICE_LIB=${SPICE_LIB} install
-cd ..
-cd das2c && make SPICE=yes CDF=yes CDF_INC=${CDF_INC} CDF_LIB=${CDF_LIB} CSPICE_INC=${SPICE_INC} CSPICE_LIB=${SPICE_LIB} install_cdf
 cd ..

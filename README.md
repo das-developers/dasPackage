@@ -22,9 +22,9 @@ Then:
 cd conda
 conda install conda-build
 conda install conda-verify
-conda install ananconda-client
+conda install anaconda-client
 
-conda build pthread4w           # Windows only
+conda build pthreads4w          # Windows only
 anaconda upload -u dasdevelopers PACKAGE_FILE_FROM_OUTPUT #Windows only
 
 conda build -c dasdevelopers das2c
