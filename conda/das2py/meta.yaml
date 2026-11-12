@@ -56,7 +56,7 @@ requirements:
       - python
       - setuptools
       - numpy >=1.10.0
-      - nomkl [ osx and x86_64 ]
+      - nomkl # [ osx and x86_64 ]
       - lxml
       - das2c =={{ das2c_version }}
 

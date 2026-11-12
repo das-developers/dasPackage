@@ -38,7 +38,7 @@ anaconda upload -u dasdevelopers PACKAGE_FILE_FROM_OUTPUT
 At placeholder stage, nothing here yet
 
 ## RPM Packages
-Spec file for das2C is in progress
+das2C spec builds and passes its test suite on Rocky 9, see rpm/das2C/README.md
 
 
 
